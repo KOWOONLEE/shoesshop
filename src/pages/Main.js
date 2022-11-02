@@ -2,9 +2,11 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import ShoesContainer from "../component/shoesContainer";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Main() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Navbar bg="light" variant="light">
@@ -13,7 +15,13 @@ function Main() {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Cart</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link
+              onClick={() => {
+                navigate("./detail");
+              }}
+            >
+              상세페이지
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
