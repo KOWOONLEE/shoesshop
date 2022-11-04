@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main shoes={shoes} />} />
+        <Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
         <Route path="*" element={<div>없는 페이지입니다.</div>} />
         <Route path="/detail" element={<ShoesDetail shoes={shoes} />} />
         <Route path="/detail/:id" element={<ShoesDetail shoes={shoes} />} />
