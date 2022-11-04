@@ -4,7 +4,7 @@ import { useState } from "react";
 import ShoesContainer from "../component/shoesContainer";
 import { useNavigate, Link } from "react-router-dom";
 
-function Main() {
+function Main({ shoes }) {
   const navigate = useNavigate();
 
   return (
@@ -27,7 +27,7 @@ function Main() {
       </Navbar>
       <div className="main_bg"></div>
       <div className="container">
-        <ShoesContainer />
+        <ShoesContainer shoes={shoes} />
       </div>
     </>
   );

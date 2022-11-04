@@ -3,14 +3,18 @@ import "./App.css";
 import { BrowserRouter, Router, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main";
 import ShoesDetail from "./pages/shoesDetail";
+import ShoesData from "./component/shoesData";
 
 function App() {
+  const [shoes, setShoes] = useState(ShoesData);
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main shoes={shoes} />} />
         <Route path="*" element={<div>없는 페이지입니다.</div>} />
-        <Route path="/detail" element={<ShoesDetail />} />
+        <Route path="/detail" element={<ShoesDetail shoes={shoes} />} />
+        <Route path="/detail/:id" element={<ShoesDetail shoes={shoes} />} />
 
         {/* nested Routes */}
         <Route path="/about" element={<About />}>
