@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import "./App.css";
 import { BrowserRouter, Router, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main";
 import ShoesDetail from "./pages/shoesDetail";
 import ShoesData from "./component/shoesData";
+import Cart from "./pages/Cart";
+
+export const Context1 = createContext();
 
 function App() {
   const [shoes, setShoes] = useState(ShoesData);
+  const [stock, setStock] = useState(10, 11, 12);
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
         <Route path="*" element={<div>없는 페이지입니다.</div>} />
-        <Route path="/detail" element={<ShoesDetail shoes={shoes} />} />
-        <Route path="/detail/:id" element={<ShoesDetail shoes={shoes} />} />
+        {/* <Route path="/detail" element={<ShoesDetail shoes={shoes} />} /> */}
+        <Route
+          path="/detail/:id"
+          element={
+            <Context1.Provider value={{ stock }}>
+              <ShoesDetail shoes={shoes} />
+            </Context1.Provider>
+          }
+        />
 
         {/* nested Routes */}
         <Route path="/about" element={<About />}>
@@ -25,6 +36,7 @@ function App() {
           <Route path="one" element={<div>첫 주문시 양말 서비스</div>} />
           <Route path="two" element={<div>생일기념 쿠폰 받기</div>} />
         </Route>
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
