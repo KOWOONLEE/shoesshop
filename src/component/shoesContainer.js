@@ -4,10 +4,6 @@ import axios from "axios";
 function ShoesContainer({ shoes, setShoes }) {
   const [count, setCount] = useState(2);
 
-  const buttonCount = () => {
-    setCount(count + 1);
-    console.log(count);
-  };
   const getshoesData = () => {
     //로딩중 띄우기
     axios
@@ -21,6 +17,9 @@ function ShoesContainer({ shoes, setShoes }) {
         console.log(shoes);
         setCount(count + 1);
         console.log(count);
+        if (count > 3) {
+          alert("상품이 더이상 없습니다.");
+        }
         //로딩중 숨기기
       })
       .catch(() => {
@@ -50,6 +49,7 @@ function ShoesContainer({ shoes, setShoes }) {
           <div key={item.id} value={item.id} className="col-md-4">
             <img
               className="contentImg"
+              alt="shoesImg"
               src={`https://codingapple1.github.io/shop/shoes${
                 item.id + 1
               }.jpg`}
