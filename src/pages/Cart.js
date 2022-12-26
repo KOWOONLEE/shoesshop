@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { Table } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeUser, changeAge, changeCount } from "./../store";
 
 function Cart() {
+  const [userId, setUserId] = useState("");
+
   //store안에 있는 모든 state의미
   //const user = useSelector((state)=> {return state.shopUser})
   //이렇게도 가능
@@ -13,8 +17,25 @@ function Cart() {
     return state;
   });
 
+  const dispatch = useDispatch();
+
+  const changeButton = () => {
+    setUserId(user.shopCart.id);
+    if (userId === user.shopCart.id) {
+      dispatch(changeCount());
+    }
+  };
+
   return (
     <>
+      {user.shopUser.name}의 장바구니 나이 : {user.shopUser.age}
+      <button
+        onClick={() => {
+          dispatch(changeAge());
+        }}
+      >
+        +
+      </button>
       <Table>
         <thead>
           <tr>
@@ -27,9 +48,19 @@ function Cart() {
         <tbody>
           {user.shopCart.map((item, i) => (
             <tr value={item.id} key={item.id}>
-              <td>{item.i}</td>
+              <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.count}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    changeButton();
+                    // dispatch(changeCount());
+                  }}
+                >
+                  +
+                </button>
+              </td>
             </tr>
           ))}
           {/* <tr>

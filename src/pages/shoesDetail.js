@@ -2,17 +2,16 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap";
-import {Context1} from './../App.js'
+import { Context1 } from "./../App.js";
 
 function ShoesDetail({ shoes }) {
-
-  const {stock}= useContext(Context1)
+  const { stock } = useContext(Context1);
 
   const [event, setEvent] = useState(true);
   const [menuTab, setMenuTab] = useState(0);
   const { id } = useParams();
 
-  const originId = shoes.find((shoe) => shoe.id == id);
+  const originId = shoes.find((shoe) => shoe.id === id);
 
   useEffect(() => {
     const eventPopup = setTimeout(() => {
@@ -31,6 +30,7 @@ function ShoesDetail({ shoes }) {
           {stock}
           <div className="col-md-6">
             <img
+              alt="shoesImg"
               src="https://codingapple1.github.io/shop/shoes1.jpg"
               width="100%"
             />
@@ -95,8 +95,12 @@ function TabContent({ menuTab }) {
 
   // useEffect 사용하여 탭이 변경될때마다 코드 실행 (end를 뗐다가 붙였다가)되도록 만듬
   useEffect(() => {
-    setTimeout(() => {setFade("end")}, 100);
-    return () => {setFade("")};
+    setTimeout(() => {
+      setFade("end");
+    }, 100);
+    return () => {
+      setFade("");
+    };
   }, [menuTab]);
 
   return (

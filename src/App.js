@@ -10,7 +10,7 @@ export const Context1 = createContext();
 
 function App() {
   const [shoes, setShoes] = useState(ShoesData);
-  const [stock, setStock] = useState(10, 11, 12);
+  const [stock, setStock] = useState([10, 11, 12]);
 
   return (
     <BrowserRouter>
