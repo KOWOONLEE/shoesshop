@@ -28,16 +28,23 @@ const shopCart = createSlice({
     { id: 2, name: "Grey Yordan", count: 1 },
   ],
   reducers: {
-    changeCount(state) {
-      return state.count + 1;
-      // state.count += 1;
+    // changeCount(state, action) {
+    //   state[action.payload].count++;
+    // },
+    changeCount(state, action) {
+      const shopId = state.findIndex((item) => {
+        return item.id === action.payload;
+      });
+      state[shopId].count++;
+    },
+    addItem(state, action) {
+      state.push(action.payload);
     },
   },
 });
 
-export let { changeUser } = shopUser.actions;
-export let { changeCount } = shopCart.actions;
-export let { changeAge } = shopUser.actions;
+export let { changeUser, changeAge } = shopUser.actions;
+export let { changeCount, addItem } = shopCart.actions;
 
 export default configureStore({
   //위에 등록한거 가져와야함.

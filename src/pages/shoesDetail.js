@@ -1,17 +1,27 @@
 import { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap";
 import { Context1 } from "./../App.js";
+import { addItem } from "./../store";
 
 function ShoesDetail({ shoes }) {
   const { stock } = useContext(Context1);
+  const navigate = useNavigate();
+
+  const user = useSelector((state) => {
+    return state;
+  });
+
+  const dispatch = useDispatch();
 
   const [event, setEvent] = useState(true);
   const [menuTab, setMenuTab] = useState(0);
   const { id } = useParams();
 
-  const originId = shoes.find((shoe) => shoe.id === id);
+  const originId = shoes.find((shoe) => shoe.id == id);
+  console.log(originId.title);
 
   useEffect(() => {
     const eventPopup = setTimeout(() => {
@@ -21,6 +31,17 @@ function ShoesDetail({ shoes }) {
       };
     }, 10000);
   }, []);
+
+  const addCart = () => {
+    navigate("/cart");
+    dispatch(
+      addItem({
+        id: originId.id,
+        name: originId.title,
+        count: 1,
+      })
+    );
+  };
 
   return (
     <>
@@ -39,7 +60,9 @@ function ShoesDetail({ shoes }) {
             <h4 className="pt-5">{originId.title}</h4>
             <p>{originId.content}</p>
             <p>{originId.price}</p>
-            <button className="btn btn-danger">주문하기</button>
+            <button className="btn btn-danger" onClick={addCart}>
+              주문하기
+            </button>
           </div>
         </div>
       </div>

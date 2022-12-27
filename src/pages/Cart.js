@@ -18,12 +18,9 @@ function Cart() {
   });
 
   const dispatch = useDispatch();
-
+  // const cartId = user.shopCart.find((cart) => cart.id == userId);
   const changeButton = () => {
     setUserId(user.shopCart.id);
-    if (userId === user.shopCart.id) {
-      dispatch(changeCount());
-    }
   };
 
   return (
@@ -54,8 +51,7 @@ function Cart() {
               <td>
                 <button
                   onClick={() => {
-                    changeButton();
-                    // dispatch(changeCount());
+                    dispatch(changeCount(i));
                   }}
                 >
                   +
