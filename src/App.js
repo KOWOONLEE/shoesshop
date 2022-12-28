@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Router, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main";
@@ -9,6 +9,10 @@ import Cart from "./pages/Cart";
 export const Context1 = createContext();
 
 function App() {
+  useEffect(() => {
+    localStorage.getItem("watched", JSON.stringify([]));
+  }, []);
+
   const [shoes, setShoes] = useState(ShoesData);
   const [stock, setStock] = useState([10, 11, 12]);
 

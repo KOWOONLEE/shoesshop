@@ -18,10 +18,22 @@ function ShoesDetail({ shoes }) {
 
   const [event, setEvent] = useState(true);
   const [menuTab, setMenuTab] = useState(0);
+  const [thisItem, setThisItem] = useState([]);
   const { id } = useParams();
 
   const originId = shoes.find((shoe) => shoe.id == id);
-  console.log(originId.title);
+  console.log(originId.id);
+  useEffect(() => {
+    localStorage.setItem("watched", JSON.stringify([]));
+  });
+
+  useEffect(() => {
+    // localStorage.setItem("watched", JSON.stringify([originId.id]));
+    let 꺼낸거 = localStorage.getItem("watched");
+    꺼낸거 = JSON.parse(꺼낸거);
+    꺼낸거.push(originId.id);
+    localStorage.setItem("watched", JSON.stringify(꺼낸거));
+  }, []);
 
   useEffect(() => {
     const eventPopup = setTimeout(() => {
@@ -52,7 +64,8 @@ function ShoesDetail({ shoes }) {
           <div className="col-md-6">
             <img
               alt="shoesImg"
-              src="https://codingapple1.github.io/shop/shoes1.jpg"
+              src={`https://codingapple1.github.io/shop/shoes${id + 1}.jpg`}
+              // src="https://codingapple1.github.io/shop/shoes1.jpg"
               width="100%"
             />
           </div>

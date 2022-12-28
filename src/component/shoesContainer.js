@@ -1,8 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ShoesContainer({ shoes, setShoes }) {
   const [count, setCount] = useState(2);
+
+  const navigate = useNavigate();
 
   const getshoesData = () => {
     //로딩중 띄우기
@@ -46,7 +49,14 @@ function ShoesContainer({ shoes, setShoes }) {
     <div>
       <div className="row">
         {shoes.map((item) => (
-          <div key={item.id} value={item.id} className="col-md-4">
+          <div
+            onClick={() => {
+              navigate(`/detail/${item.id}`);
+            }}
+            key={item.id}
+            value={item.id}
+            className="col-md-4"
+          >
             <img
               className="contentImg"
               alt="shoesImg"

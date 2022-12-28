@@ -51,7 +51,9 @@ function Cart() {
               <td>
                 <button
                   onClick={() => {
-                    dispatch(changeCount(i));
+                    // dispatch(changeCount(i));
+                    dispatch(changeCount(user.shopCart[i].id));
+                    //상품 아이디를 payload로 전송해라
                   }}
                 >
                   +
