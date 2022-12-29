@@ -17,15 +17,14 @@ function ShoesContainer({ shoes, setShoes }) {
         //아래와 같이 복사본 만들기
         const copy = [...shoes, ...result.data];
         setShoes(copy);
-        console.log(shoes);
         setCount(count + 1);
-        console.log(count);
-        if (count > 3) {
-          alert("상품이 더이상 없습니다.");
-        }
+
         //로딩중 숨기기
       })
       .catch(() => {
+        if (count >= 4) {
+          alert("상품이 더이상 없습니다.");
+        }
         console.log("통신 실패");
         //로딩중 숨기기 (실패해도 로딩중 숨겨야함)
       });

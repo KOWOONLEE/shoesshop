@@ -23,16 +23,16 @@ function ShoesDetail({ shoes }) {
 
   const originId = shoes.find((shoe) => shoe.id == id);
   console.log(originId.id);
-  useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify([]));
-  });
 
   useEffect(() => {
-    // localStorage.setItem("watched", JSON.stringify([originId.id]));
-    let 꺼낸거 = localStorage.getItem("watched");
-    꺼낸거 = JSON.parse(꺼낸거);
-    꺼낸거.push(originId.id);
-    localStorage.setItem("watched", JSON.stringify(꺼낸거));
+    let saveItem = localStorage.getItem("watched");
+    saveItem = JSON.parse(saveItem);
+    saveItem.push(originId.id);
+    //중복제거하려면 set 자료형 사용
+    saveItem = new Set(saveItem);
+    // 다시 배열로 만들어줌
+    saveItem = Array.from(saveItem);
+    localStorage.setItem("watched", JSON.stringify(saveItem));
   }, []);
 
   useEffect(() => {
@@ -64,7 +64,9 @@ function ShoesDetail({ shoes }) {
           <div className="col-md-6">
             <img
               alt="shoesImg"
-              src={`https://codingapple1.github.io/shop/shoes${id + 1}.jpg`}
+              src={`https://codingapple1.github.io/shop/shoes${
+                originId.id + 1
+              }.jpg`}
               // src="https://codingapple1.github.io/shop/shoes1.jpg"
               width="100%"
             />

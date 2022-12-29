@@ -9,8 +9,15 @@ import Cart from "./pages/Cart";
 export const Context1 = createContext();
 
 function App() {
+  //이미 watched 항목이 있으면 setItem 하지 말아라
+
   useEffect(() => {
-    localStorage.getItem("watched", JSON.stringify([]));
+    localStorage.setItem("watched", JSON.stringify([]));
+    if (localStorage.getItem("watched") == null) {
+      localStorage.setItem("watched", JSON.stringify([]));
+    } else if (localStorage.getItem("watched") != null) {
+      console.log("초기화 방지");
+    }
   }, []);
 
   const [shoes, setShoes] = useState(ShoesData);

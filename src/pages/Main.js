@@ -11,10 +11,10 @@ function Main({ shoes, setShoes }) {
     <>
       <Navbar bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">신발한짝</Navbar.Brand>
+          <Navbar.Brand href="/">신발한짝</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Cart</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/cart">Cart</Nav.Link>
             <Nav.Link
               onClick={() => {
                 navigate("./detail");
