@@ -1,0 +1,67 @@
+.mainWrap {
+  display: flex;
+  height: 100vh;
+  background-image: url("../img/main-leaf.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.homeMenu {
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
+  text-decoration: none;
+}
+.homeMenu:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  display: inline-block;
+  padding: 18px;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+// .navbar {
+//   padding: 18px;
+//   text-transform: uppercase;
+//   color: white;
+//   text-decoration: none;
+//   display: block;
+// }
+
+// .navbar:hover {
+//   text-decoration: underline;
+//   color: white;
+// }
+
+.detailMenu {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  line-height: 3em;
+}
+.detailMenu:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.middlePage {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+}
+.middleMain {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 15vw;
+  height: 6vh;
+  top: 80vh;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.183);
+}
