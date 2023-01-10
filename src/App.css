@@ -1,9 +1,5 @@
 .main_bg {
-  height: 100vh;
-  background-image: url("./img/main-leaf.jpg");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8;
+  
 }
 .contentImg {
   width: 80%;

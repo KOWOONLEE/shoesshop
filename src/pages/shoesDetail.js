@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { Nav } from "react-bootstrap";
-import { Context1 } from "./../App.js";
-import { addItem } from "./../store";
+import { Context1 } from "../App";
+import { addItem } from "../store";
 
 function ShoesDetail({ shoes }) {
   const { stock } = useContext(Context1);

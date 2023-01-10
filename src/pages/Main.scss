@@ -1,9 +1,11 @@
 .mainWrap {
-  display: flex;
   height: 100vh;
   background-image: url("../img/main-leaf.jpg");
   background-size: cover;
   background-position: center;
+}
+.navWrap {
+  width: 100vw;
 }
 .homeMenu {
   font-weight: bold;
@@ -17,12 +19,18 @@
 }
 
 .navbar {
-  display: inline-block;
+  display: flex;
+  width: 92%;
   padding: 18px;
   text-transform: uppercase;
   list-style-type: none;
 }
-
+.title {
+  margin-right: 30px;
+}
+.navMenu {
+  margin-right: 30px;
+}
 // .navbar {
 //   padding: 18px;
 //   text-transform: uppercase;
@@ -35,7 +43,11 @@
 //   text-decoration: underline;
 //   color: white;
 // }
-
+.loiginMenu {
+  position: relative;
+  justify-content: right;
+  right: 10px;
+}
 .detailMenu {
   color: white;
   text-decoration: none;
@@ -48,20 +60,40 @@
 }
 
 .middlePage {
-  display: inline-flex;
+  display: flex;
   width: 100%;
+  align-items: center;
   justify-content: center;
+  vertical-align: middle;
+  flex-direction: column-reverse;
+}
+.middleTitle {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  width: 15vw;
+  height: 6vh;
+  top: 52vh;
+  color: white;
+  font-weight: bold;
+  font-size: 1.6em;
 }
 .middleMain {
   display: inline-flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 15vw;
+  width: 13vw;
   height: 6vh;
-  top: 80vh;
+  top: 65vh;
   border: 2px solid white;
   color: white;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.183);
+  font-size: 1.1em;
+}
+.rightMenu {
+  margin-right: 20px;
+  font-size: 1.1em;
+  font-weight: bold;
 }

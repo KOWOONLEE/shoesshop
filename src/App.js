@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import ShoesDetail from "./pages/shoesDetail";
 import ShoesData from "./component/shoesData";
 import Cart from "./pages/Cart";
+import { Login } from "./pages/Login";
 
 export const Context1 = createContext();
 
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
         <Route path="*" element={<div>없는 페이지입니다.</div>} />
+        <Route path="/login" element={<Login />} />
         {/* <Route path="/detail" element={<ShoesDetail shoes={shoes} />} /> */}
         <Route
           path="/detail/:id"

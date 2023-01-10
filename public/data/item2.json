@@ -1,18 +1,18 @@
 [
   {
-    "id": 1,
+    "id": 4,
     "title": "skin",
     "content": "진정 수분 스킨",
     "price": 18000
   },
   {
-    "id": 2,
+    "id": 5,
     "title": "cream",
     "content": "진정 수분 크림",
     "price": 20000
   },
   {
-    "id": 3,
+    "id": 6,
     "title": "serum",
     "content": "진정 수분 세럼",
     "price": 33000
