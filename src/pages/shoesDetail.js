@@ -64,10 +64,10 @@ function ShoesDetail({ shoes }) {
           <div className="col-md-6">
             <img
               alt="shoesImg"
-              src={`https://codingapple1.github.io/shop/shoes${
-                originId.id + 1
-              }.jpg`}
-              // src="https://codingapple1.github.io/shop/shoes1.jpg"
+              // src={`https://codingapple1.github.io/shop/shoes${
+              //   originId.id + 1
+              // }.jpg`}
+              src={originId.imgUrl}
               width="100%"
             />
           </div>

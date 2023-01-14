@@ -1,26 +1,27 @@
 let shoesData = [
   {
-    id: 0,
-    title: "White and Black",
-    content: "Born in France",
-    price: 120000,
-    imgUrl: "https://codingapple1.github.io/shop/shoes1.jpg",
-  },
-
-  {
     id: 1,
-    title: "Red Knit",
-    content: "Born in Seoul",
-    price: 110000,
-    imgUrl: "https://codingapple1.github.io/shop/shoes2.jpg",
+    title: "serum",
+    content: "화이트 세럼",
+    price: 18000,
+    imgUrl:
+      "https://drive.google.com/uc?export=view&id=1qYkj46iHTzI6gvhDhIcpGmfW56gJYPmn",
   },
-
   {
     id: 2,
-    title: "Grey Yordan",
-    content: "Born in the States",
-    price: 130000,
-    imgUrl: "https://codingapple1.github.io/shop/shoes3.jpg",
+    title: "essense",
+    content: "그린진정 에센스",
+    price: 20000,
+    imgUrl:
+      "https://drive.google.com/uc?export=view&id=1gJcRqzRilLLxzMa1Wk7vTq3pFcWxs_kD",
+  },
+  {
+    id: 3,
+    title: "essense",
+    content: "아이 에센스",
+    price: 33000,
+    imgUrl:
+      "https://drive.google.com/uc?export=view&id=1psuTvKJp--7tUNW14iRGJrqW4Bmbg0Dm",
   },
 ];
 

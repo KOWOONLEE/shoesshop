@@ -11,7 +11,10 @@ function ShoesContainer({ shoes, setShoes }) {
   const getshoesData = () => {
     //로딩중 띄우기
     axios
-      .get(`https://codingapple1.github.io/shop/data${count}.json`)
+      // .get(`https://codingapple1.github.io/shop/data${count}.json`)
+      .get(
+        `https://raw.githubusercontent.com/KOWOONLEE/shoesshop/main/public/data/item${count}.json`
+      )
       .then((result) => {
         console.log(result.data);
         //목표는 array 안에 데이터 추가하는 것 [{},{},{},{},{},{}] 이런식으로 (concat을 써도 됨)
@@ -60,11 +63,12 @@ function ShoesContainer({ shoes, setShoes }) {
             <img
               className="contentImg"
               alt="shoesImg"
-              src={`https://codingapple1.github.io/shop/shoes${
-                item.id + 1
-              }.jpg`}
+              // src={`https://codingapple1.github.io/shop/shoes${
+              //   item.id + 1
+              // }.jpg`}
+              src={item.imgUrl}
             />
-            <h4>{item.title}</h4>
+            <h4>{item.content}</h4>
             <p>{item.price}</p>
           </div>
         ))}
