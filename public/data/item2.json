@@ -1,20 +1,23 @@
 [
   {
     "id": 4,
-    "title": "skin",
-    "content": "진정 수분 스킨",
-    "price": 18000
+    "title": "serum",
+    "content": "블루 수분 세럼",
+    "price": 33000,
+    "imgUrl": "https://drive.google.com/uc?export=view&id=1vH_fXGwQ7ulPmUZVuwhzDYTbV_Sjc3IK"
   },
   {
     "id": 5,
     "title": "cream",
-    "content": "진정 수분 크림",
-    "price": 20000
+    "content": "퍼플 탄력 크림",
+    "price": 28000,
+    "imgUrl": "https://drive.google.com/uc?export=view&id=1uCFRN6ES1C0UdyE5qMpjLsGk_v7lg0iy"
   },
   {
     "id": 6,
-    "title": "serum",
-    "content": "진정 수분 세럼",
-    "price": 33000
+    "title": "cream",
+    "content": "진정 수분 크림",
+    "price": 20000,
+    "imgUrl": "https://drive.google.com/uc?export=view&id=1YgQV760k_dCi15R-UINCk6fx5mDdV_xQ"
   }
 ]

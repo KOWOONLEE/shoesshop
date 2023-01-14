@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function ShoesContainer({ shoes, setShoes }) {
   const [count, setCount] = useState(2);
+  console.log(shoes);
 
   const navigate = useNavigate();
 
