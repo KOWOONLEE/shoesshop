@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styled from "styled-components";
+
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -49,34 +51,48 @@ function ShoesContainer({ shoes, setShoes }) {
   //버튼 누른 직후엔 로딩중 띄우기
 
   return (
-    <div>
-      <div className="row">
-        {shoes.map((item) => (
-          <div
-            onClick={() => {
-              navigate(`/detail/${item.id}`);
-            }}
-            key={item.id}
-            value={item.id}
-            className="col-md-4"
-          >
-            <img
-              className="contentImg"
-              alt="shoesImg"
-              // src={`https://codingapple1.github.io/shop/shoes${
-              //   item.id + 1
-              // }.jpg`}
-              src={item.imgUrl}
-            />
-            <h4>{item.content}</h4>
-            <p>{item.price}</p>
-          </div>
-        ))}
-      </div>
+    <StyledContainer>
+      <div>
+        <div className="row">
+          {shoes.map((item) => (
+            <div
+              onClick={() => {
+                navigate(`/detail/${item.id}`);
+              }}
+              key={item.id}
+              value={item.id}
+              className="col-md-4"
+            >
+              <img
+                className="contentImg"
+                alt="shoesImg"
+                // src={`https://codingapple1.github.io/shop/shoes${
+                //   item.id + 1
+                // }.jpg`}
+                src={item.imgUrl}
+              />
+              <h4>{item.content}</h4>
+              <p>{item.price}</p>
+            </div>
+          ))}
+        </div>
 
-      <button onClick={getshoesData}>더보기</button>
-    </div>
+        <button className="moreButton" onClick={getshoesData}>
+          더보기
+        </button>
+      </div>
+    </StyledContainer>
   );
 }
 
 export default ShoesContainer;
+
+const StyledContainer = styled.div`
+  text-align: center;
+
+  .moreButton {
+    width: 5vw;
+    background-color: pink;
+    border: none;
+  }
+`;
