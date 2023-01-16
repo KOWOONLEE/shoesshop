@@ -6,7 +6,7 @@ import { Nav } from "react-bootstrap";
 import { Context1 } from "../App";
 import { addItem } from "../store";
 
-function ShoesDetail({ shoes }) {
+function CosDetail({ cosmetic }) {
   const { stock } = useContext(Context1);
   const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ function ShoesDetail({ shoes }) {
   const [thisItem, setThisItem] = useState([]);
   const { id } = useParams();
 
-  const originId = shoes.find((shoe) => shoe.id == id);
+  const originId = cosmetic.find((cos) => cos.id == id);
   console.log(originId.id);
 
   useEffect(() => {
@@ -148,7 +148,7 @@ function TabContent({ menuTab }) {
   );
 }
 
-export default ShoesDetail;
+export default CosDetail;
 
 const StyledAlert = styled.div`
   background-color: yellow;

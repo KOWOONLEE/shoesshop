@@ -1,13 +1,13 @@
 import { Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import ShoesContainer from "../component/shoesContainer";
+import CosContainer from "../component/CosContainer";
 import { useNavigate, Link } from "react-router-dom";
 import "./Main.scss";
 import Footer from "../component/Footer";
 import { Nav } from "../component/Nav";
 
-function Main({ shoes, setShoes }) {
+function Main({ cosmetic, setCosmetic }) {
   return (
     <>
       {/* <Navbar className={styles.navWrap}>

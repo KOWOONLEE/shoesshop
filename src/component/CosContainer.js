@@ -1,12 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function ShoesContainer({ shoes, setShoes }) {
+function CosContainer({ cosmetic, setCosmetic }) {
   const [count, setCount] = useState(2);
-  console.log(shoes);
+  console.log(cosmetic);
 
   const navigate = useNavigate();
 
@@ -21,8 +20,8 @@ function ShoesContainer({ shoes, setShoes }) {
         console.log(result.data);
         //목표는 array 안에 데이터 추가하는 것 [{},{},{},{},{},{}] 이런식으로 (concat을 써도 됨)
         //아래와 같이 복사본 만들기
-        const copy = [...shoes, ...result.data];
-        setShoes(copy);
+        const copy = [...cosmetic, ...result.data];
+        setCosmetic(copy);
         setCount(count + 1);
 
         //로딩중 숨기기
@@ -54,7 +53,7 @@ function ShoesContainer({ shoes, setShoes }) {
     <StyledContainer>
       <div>
         <div className="row">
-          {shoes.map((item) => (
+          {cosmetic.map((item) => (
             <div
               onClick={() => {
                 navigate(`/detail/${item.id}`);
@@ -71,8 +70,8 @@ function ShoesContainer({ shoes, setShoes }) {
                 // }.jpg`}
                 src={item.imgUrl}
               />
-              <h4>{item.content}</h4>
-              <p>{item.price}</p>
+              <h4 className="cosName">{item.content}</h4>
+              <p className="cosPrice">{item.price}</p>
             </div>
           ))}
         </div>
@@ -85,14 +84,22 @@ function ShoesContainer({ shoes, setShoes }) {
   );
 }
 
-export default ShoesContainer;
+export default CosContainer;
 
 const StyledContainer = styled.div`
   text-align: center;
 
   .moreButton {
-    width: 5vw;
+    width: 65px;
     background-color: white;
     border: 1px solid gray;
+  }
+  .cosName {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .cosPrice {
+    font-size: 0.9em;
   }
 `;

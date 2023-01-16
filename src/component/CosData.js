@@ -1,4 +1,4 @@
-let shoesData = [
+let cosData = [
   {
     id: 1,
     title: "serum",
@@ -25,4 +25,4 @@ let shoesData = [
   },
 ];
 
-export default shoesData;
+export default cosData;

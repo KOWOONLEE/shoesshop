@@ -1,38 +1,14 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import ShoesContainer from "../component/shoesContainer";
+import CosContainer from "../component/CosContainer";
+import { Nav2 } from "../component/Nav2";
 
-export const Cosmetics = ({ shoes, setShoes }) => {
+export const Cosmetics = ({ cosmetic, setCosmetic }) => {
   return (
     <StyledCosme>
-      <div className="navWrap">
-        <div className="navbar">
-          <div className="logo">
-            <span className="title">
-              <Link to="/" className="homeMenu">
-                MY COSME
-              </Link>
-            </span>
-          </div>
-          <div className="middleMenu">
-            <span className="leftMenu">
-              <a className="detailMenu" href="/cosmetics">
-                제품 보기
-              </a>
-            </span>
-          </div>
-          <div>
-            <span className="rightMenu">
-              <a className="detailMenu" href="/cart">
-                Cart
-              </a>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div className="cosmeWrap">필터</div>
+      <Nav2 />
+      {/* <div className="cosmeWrap">필터</div> */}
       <div className="cosmeContainer">
-        <ShoesContainer shoes={shoes} setShoes={setShoes} />
+        <CosContainer cosmetic={cosmetic} setCosmetic={setCosmetic} />
       </div>
     </StyledCosme>
   );
@@ -44,7 +20,7 @@ const StyledCosme = styled.div`
     height: 10vh;
     top: 0;
     z-index: 999;
-    background-color: white;
+    /* background-color: white; */
   }
   .homeMenu {
     font-weight: bold;
@@ -86,7 +62,7 @@ const StyledCosme = styled.div`
     color: black;
     text-decoration: underline;
   }
-  .cosmeWrap {
+  /* .cosmeWrap {
     position: absolute;
     top: 12%;
     width: 100%;
@@ -95,9 +71,9 @@ const StyledCosme = styled.div`
     background-size: cover;
     background-position: center;
     background-color: gray;
-  }
+  } */
   .cosmeContainer {
     position: absolute;
-    top: 33%;
+    top: 10%;
   }
 `;

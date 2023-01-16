@@ -2,8 +2,8 @@ import React, { useState, createContext, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Router, Routes, Route, Outlet } from "react-router-dom";
 import Main from "./pages/Main";
-import ShoesDetail from "./pages/shoesDetail";
-import ShoesData from "./component/shoesData";
+import CosDetail from "./pages/CosDetail";
+import cosData from "./component/CosData";
 import Cart from "./pages/Cart";
 import { Cosmetics } from "./pages/Cosmetics";
 
@@ -21,17 +21,19 @@ function App() {
     }
   }, []);
 
-  const [shoes, setShoes] = useState(ShoesData);
-  console.log(shoes);
+  const [cosmetic, setCosmetic] = useState(cosData);
   const [stock, setStock] = useState([10, 11, 12]);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
+        <Route
+          path="/"
+          element={<Main cosmetic={cosmetic} setCosmetic={setCosmetic} />}
+        />
         <Route
           path="/cosmetics"
-          element={<Cosmetics shoes={shoes} setShoes={setShoes} />}
+          element={<Cosmetics cosmetic={cosmetic} setCosmetic={setCosmetic} />}
         />
         <Route path="*" element={<div>없는 페이지입니다.</div>} />
 
@@ -40,7 +42,7 @@ function App() {
           path="/detail/:id"
           element={
             <Context1.Provider value={{ stock }}>
-              <ShoesDetail shoes={shoes} />
+              <CosDetail cosmetic={cosmetic} />
             </Context1.Provider>
           }
         />
