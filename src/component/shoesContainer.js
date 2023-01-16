@@ -78,7 +78,7 @@ function ShoesContainer({ shoes, setShoes }) {
         </div>
 
         <button className="moreButton" onClick={getshoesData}>
-          더보기
+          more...
         </button>
       </div>
     </StyledContainer>
@@ -92,7 +92,7 @@ const StyledContainer = styled.div`
 
   .moreButton {
     width: 5vw;
-    background-color: pink;
-    border: none;
+    background-color: white;
+    border: 1px solid gray;
   }
 `;
