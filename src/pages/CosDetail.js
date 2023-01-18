@@ -57,64 +57,69 @@ function CosDetail({ cosmetic }) {
 
   return (
     <>
-      <div className="container">
-        {event ? <StyledAlert>10초 이내 구매 시 할인</StyledAlert> : ""}
-        <div className="row">
-          {stock}
-          <div className="col-md-6">
-            <img
-              alt="shoesImg"
-              // src={`https://codingapple1.github.io/shop/shoes${
-              //   originId.id + 1
-              // }.jpg`}
-              src={originId.imgUrl}
-              width="100%"
-            />
-          </div>
-          <div className="col-md-6 mt-4">
-            <h4 className="pt-5">{originId.title}</h4>
-            <p>{originId.content}</p>
-            <p>{originId.price}</p>
-            <button className="btn btn-danger" onClick={addCart}>
-              주문하기
-            </button>
+      <StyledDetail>
+        <div className="container">
+          {event ? <div className="saleAlert">10초 이내 구매 시 할인</div> : ""}
+          <div className="detailWrap">
+            <div className="row">
+              {/* {stock} */}
+              <div className="col-md-6">
+                <img
+                  className="detailImg"
+                  alt="shoesImg"
+                  // src={`https://codingapple1.github.io/shop/shoes${
+                  //   originId.id + 1
+                  // }.jpg`}
+                  src={originId.imgUrl}
+                  width="100%"
+                />
+              </div>
+              <div className="col-md-6 mt-4">
+                <h4 className="pt-5">{originId.title}</h4>
+                <p>{originId.content}</p>
+                <p>{originId.price}</p>
+                <button className="btn btn-danger" onClick={addCart}>
+                  주문하기
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <Nav variant="tabs" defaultActiveKey="link0">
-        <Nav.Item>
-          <Nav.Link
-            onClick={() => {
-              setMenuTab(0);
-            }}
-            eventKey="link0"
-          >
-            버튼0
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            onClick={() => {
-              setMenuTab(1);
-            }}
-            eventKey="link1"
-          >
-            버튼1
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link
-            onClick={() => {
-              setMenuTab(2);
-            }}
-            eventKey="link2"
-          >
-            버튼2
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-      {/* {
+        <div className="detailNavtap">
+          <Nav variant="tabs" defaultActiveKey="link0">
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  setMenuTab(0);
+                }}
+                eventKey="link0"
+              >
+                제품세부정보
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  setMenuTab(1);
+                }}
+                eventKey="link1"
+              >
+                배송 & 반품
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link
+                onClick={() => {
+                  setMenuTab(2);
+                }}
+                eventKey="link2"
+              >
+                온라인 혜택
+              </Nav.Link>
+            </Nav.Item>
+          </Nav>
+        </div>
+        {/* {
         menuTab == 0 ?<div>내용0</div> : null
       }
       {
@@ -123,7 +128,8 @@ function CosDetail({ cosmetic }) {
       {
         menuTab == 2 ?<div>내용2</div> : null
       } */}
-      <TabContent menuTab={menuTab} />
+        <TabContent menuTab={menuTab} />
+      </StyledDetail>
     </>
   );
 }
@@ -142,15 +148,55 @@ function TabContent({ menuTab }) {
   }, [menuTab]);
 
   return (
-    <div className={`start ${fade}`}>
-      {[<div>내용0</div>, <div>내용1</div>, <div>내용2</div>][menuTab]}
-    </div>
+    <StyledTap>
+      <div className={`start ${fade}`}>
+        {
+          [
+            <div>제품세부정보</div>,
+            <div>배송 & 반품</div>,
+            <div>온라인 혜택</div>,
+          ][menuTab]
+        }
+      </div>
+    </StyledTap>
   );
 }
 
 export default CosDetail;
 
-const StyledAlert = styled.div`
-  background-color: yellow;
-  text-align: center;
+const StyledDetail = styled.div`
+  .saleAlert {
+    height: 30px;
+    background-color: black;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+  }
+  .row {
+    margin-top: 10vh;
+    align-items: center;
+  }
+  .detailWrap {
+    align-items: center;
+  }
+  .detailImg {
+    width: 40vw;
+  }
+  .btn-danger {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+  .detailNavtap {
+    width: 90vw;
+    text-align: center;
+    margin: 30px auto;
+  }
+`;
+const StyledTap = styled.div`
+  width: 90vw;
+  /* text-align: center; */
+  margin: 30px auto;
 `;
