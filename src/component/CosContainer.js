@@ -102,4 +102,7 @@ const StyledContainer = styled.div`
   .cosPrice {
     font-size: 0.9em;
   }
+  .col-md-4:hover {
+    cursor: pointer;
+  }
 `;
