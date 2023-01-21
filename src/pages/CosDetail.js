@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Nav } from "react-bootstrap";
 import { Context1 } from "../App";
 import { addItem } from "../store";
+import { Nav2 } from "../component/Nav2";
 
 function CosDetail({ cosmetic }) {
   const { stock } = useContext(Context1);
@@ -58,6 +59,7 @@ function CosDetail({ cosmetic }) {
   return (
     <>
       <StyledDetail>
+        <Nav2 />
         <div className="container">
           {event ? <div className="saleAlert">10초 이내 구매 시 할인</div> : ""}
           <div className="detailWrap">
