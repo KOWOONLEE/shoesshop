@@ -61,7 +61,13 @@ function CosDetail({ cosmetic }) {
       <StyledDetail>
         <Nav2 />
         <div className="container">
-          {event ? <div className="saleAlert">10초 이내 구매 시 할인</div> : ""}
+          {event ? (
+            <div className="saleAlert">
+              10초 이내 구매 시 할인 (이 메세지는 10초 후 사라집니다)
+            </div>
+          ) : (
+            ""
+          )}
           <div className="detailWrap">
             <div className="row">
               {/* {stock} */}
