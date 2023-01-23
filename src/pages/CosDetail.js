@@ -84,7 +84,7 @@ function CosDetail({ cosmetic }) {
               </div>
               <div className="col-md-6 mt-4">
                 <h4 className="pt-5">{originId.title}</h4>
-                <p>{originId.content}</p>
+                <p>{originId.name}</p>
                 <p>{originId.price}</p>
                 <button className="btn btn-danger" onClick={addCart}>
                   주문하기

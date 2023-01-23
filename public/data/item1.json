@@ -9,14 +9,14 @@
   {
     "id": 2,
     "title": "essense",
-    "content": "그린진정 에센스",
+    "name": "그린진정 에센스",
     "price": 20000,
     "imgUrl": "https://drive.google.com/uc?export=view&id=1gJcRqzRilLLxzMa1Wk7vTq3pFcWxs_kD"
   },
   {
     "id": 3,
     "title": "essense",
-    "content": "아이 에센스",
+    "name": "아이 에센스",
     "price": 33000,
     "imgUrl": "https://drive.google.com/uc?export=view&id=1psuTvKJp--7tUNW14iRGJrqW4Bmbg0Dm"
   }
