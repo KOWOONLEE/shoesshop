@@ -2,21 +2,21 @@
   {
     "id": 7,
     "title": "set",
-    "name": "화이트 세트",
+    "content": "화이트 세트",
     "price": 43000,
     "imgUrl": "https://drive.google.com/uc?export=view&id=16R2K8cER15xQfypBrk4LqPPDLIlgRGiN"
   },
   {
     "id": 8,
     "title": "set",
-    "name": "맨 세트",
+    "content": "맨 세트",
     "price": 48000,
     "imgUrl": "https://drive.google.com/uc?export=view&id=11KRc6tCxgugMtuPwGOcnHkAFR6LCBa8p"
   },
   {
     "id": 9,
     "title": "set",
-    "name": "그린 세트",
+    "content": "그린 세트",
     "price": 50000,
     "imgUrl": "https://drive.google.com/uc?export=view&id=15V3EbS_n2kAwdmGYRmuOORsQxpv5M2qI"
   }

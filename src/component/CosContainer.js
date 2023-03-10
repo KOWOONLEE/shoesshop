@@ -71,7 +71,7 @@ function CosContainer({ cosmetic, setCosmetic }) {
                 src={item.imgUrl}
               />
               <h4 className="cosName">{item.content}</h4>
-              <p className="cosPrice">{item.price}</p>
+              <p className="cosPrice">{item.price.toLocaleString()}</p>
             </div>
           ))}
         </div>
@@ -88,21 +88,29 @@ export default CosContainer;
 
 const StyledContainer = styled.div`
   text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
 
   .moreButton {
     width: 65px;
     background-color: white;
     border: 1px solid gray;
   }
+  .moreButton:hover {
+    border: 2px solid gray;
+  }
   .cosName {
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: bold;
     margin-top: 10px;
   }
   .cosPrice {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
   .col-md-4:hover {
     cursor: pointer;
+  }
+  .contentImg {
+    width: 100%;
   }
 `;
