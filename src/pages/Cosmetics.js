@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import CosContainer from "../component/CosContainer";
 import { Nav2 } from "../component/Nav2";
+import Watched from "../component/Watched";
 
 export const Cosmetics = ({ cosmetic, setCosmetic }) => {
   return (
@@ -10,6 +11,7 @@ export const Cosmetics = ({ cosmetic, setCosmetic }) => {
       <div className="cosmeContainer">
         <CosContainer cosmetic={cosmetic} setCosmetic={setCosmetic} />
       </div>
+      <Watched />
     </StyledCosme>
   );
 };

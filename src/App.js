@@ -11,9 +11,8 @@ export const Context1 = createContext();
 
 function App() {
   //이미 watched 항목이 있으면 setItem 하지 말아라
-
   useEffect(() => {
-    localStorage.setItem("watched", JSON.stringify([]));
+    // localStorage.setItem("watched", JSON.stringify([])); //localstorage에 배열로 저장하려면 문자열 작업을 한번 해줘야함
     if (localStorage.getItem("watched") == null) {
       localStorage.setItem("watched", JSON.stringify([]));
     } else if (localStorage.getItem("watched") != null) {

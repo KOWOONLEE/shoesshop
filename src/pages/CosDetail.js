@@ -23,16 +23,13 @@ function CosDetail({ cosmetic }) {
   const { id } = useParams();
 
   const originId = cosmetic.find((cos) => cos.id == id);
-  console.log(originId.id);
 
   useEffect(() => {
     let saveItem = localStorage.getItem("watched");
     saveItem = JSON.parse(saveItem);
     saveItem.push(originId.id);
-    //중복제거하려면 set 자료형 사용
-    saveItem = new Set(saveItem);
-    // 다시 배열로 만들어줌
-    saveItem = Array.from(saveItem);
+    saveItem = new Set(saveItem); //중복 제거해줌
+    saveItem = Array.from(saveItem); //다시 배열로 만들어줌
     localStorage.setItem("watched", JSON.stringify(saveItem));
   }, []);
 
