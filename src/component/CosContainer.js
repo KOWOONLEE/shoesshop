@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 function CosContainer({ cosmetic, setCosmetic }) {
   const [count, setCount] = useState(2);
-  console.log(cosmetic);
 
   const navigate = useNavigate();
 

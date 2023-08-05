@@ -27,8 +27,8 @@ function CosDetail({ cosmetic }) {
   useEffect(() => {
     let saveItem = localStorage.getItem("watched");
     saveItem = JSON.parse(saveItem);
-    saveItem.push(originId.id);
-    saveItem = new Set(saveItem); //중복 제거해줌
+    saveItem.push(originId);
+    saveItem = [...new Set(saveItem.map(JSON.stringify))].map(JSON.parse); //중복 제거
     saveItem = Array.from(saveItem); //다시 배열로 만들어줌
     localStorage.setItem("watched", JSON.stringify(saveItem));
   }, []);

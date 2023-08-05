@@ -21,6 +21,7 @@ function App() {
   }, []);
 
   const [cosmetic, setCosmetic] = useState(cosData);
+  // console.log(cosmetic);
   const [stock, setStock] = useState([10, 11, 12]);
 
   return (

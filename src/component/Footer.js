@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <div className="footerContainer">
-      <div classname="footerTop">
+      <div className="footerTop">
         <p>
           주)고우니 컴퍼니 | 사업자등록번호: 123-12-12345 | 대표자: 고우니 |
           경기도 수원시 영통구 | 대표번호: 1644-1111 | 이메일: hhh3901@gmail.com

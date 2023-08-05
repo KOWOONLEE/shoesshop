@@ -11,7 +11,7 @@ export const Cosmetics = ({ cosmetic, setCosmetic }) => {
       <div className="cosmeContainer">
         <CosContainer cosmetic={cosmetic} setCosmetic={setCosmetic} />
       </div>
-      <Watched />
+      <Watched cosmetic={cosmetic} />
     </StyledCosme>
   );
 };
